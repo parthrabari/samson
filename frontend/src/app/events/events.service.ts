@@ -4,16 +4,16 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 
 import {Events } from './events';
-import {Registration} from './RegSuccess';
 
 @Injectable()
 export class eventsService{
-    private url = 'http://localhost:8080/api/events';
-    registered : Registration;
+    private url = 'api/events';
+
+
     constructor(private http : Http ) {}
 
-    reg(eid : number,id :number,tikcnt : number) { 
-     let regurl = 'http://localhost:8080/api/register/';
+    reg(eid : number,id :number,tikcnt : number) : Object { 
+     let regurl = 'api/register/';
     console.log("serv"); 
     console.log(eid + "eid");
     console.log(id + "id");
@@ -29,15 +29,14 @@ export class eventsService{
      let options = new RequestOptions({headers: headers});
 
      return this.http.post(regurl,body,options)
-               .flatMap((res : Response) => {
+               .flatMap((res : any) => {
                  var location= res.headers.get('location');
                  console.log(location);
                  return this.http.get(location);})
-                 .map((res:Response)=> {
-                   console.log(res.json());
+                 .map((res:any)=> {
+                   localStorage.setItem("regid",res.json().id);
                    res.json()})   
-                 .subscribe()                
-                 ;
+                 .subscribe();
                   
     }
 

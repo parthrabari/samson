@@ -1,6 +1,5 @@
 import {Events } from './events';
 import {eventsService } from './events.service';
-import {Registration} from './RegSuccess';
 
 import { Component , OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
@@ -13,17 +12,15 @@ import { Observable } from 'rxjs/Observable';
 })
 
 export class EventsComponent implements OnInit {
-  title = 'events works!';
   errorMessage : string;
   events : Events[];
-  regid : number;
+  regid : String;
 
   constructor(private eventsService : eventsService,
               private route : Router){}
  
   ngOnInit(){
     this.getAll();
-    this.title = 'Rom';
   };
   getAll(): void {
     this.eventsService
@@ -35,7 +32,8 @@ export class EventsComponent implements OnInit {
     console.log(eid + "eid");
     console.log(id + "id");
     console.log(tikcnt + "tk");
-    let reg = this.eventsService.reg(eid,id,tikcnt);
+    this.eventsService.reg(eid,id,tikcnt);
+    this.regid = localStorage.getItem("regid");
     
   }
 
