@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded" >
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">
+            <img src="./logo.png" alt="logo" width="150"/>
+        </a>    
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav">
+                <a style = "color:#FF3D56" class="nav-item nav-link active" href="../index.html">Home <span class="sr-only">(current)</span></a>
+                <a style = "color:#FF3D56" class="nav-item nav-link " href="../index.html">About US </a>
+                <a style = "color:#FF3D56" class="nav-item nav-link " href="../index.html">Events</a>
+                <a id = "log"   class="nav-item nav-link " [routerLink]="['/login']">Login</a>
+                <a id= "signup" class="nav-item nav-link " href="#">Sign Up</a>                
+            </div>            
+        </div>
+    </nav>
+</div>
+<div class="container-fluid">
+    <img src="https://unsplash.it/1335/500/?random" alt="placeholder" />
+
+    <div class="row">
+    <div class="col-lg-6">
+        <div class="card">
+        <div class="card-block">
+            <h3 class="card-title">Ongoing Events</h3>
+            <p class="card-text">Explore ongoing Events</p>
+            <a [routerLink]="['/events']" class="btn btn-primary">Go!</a>
+        </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+        <div class="card-block">
+            <h3 class="card-title">Popular Events</h3>
+            <p class="card-text">See What's Trending..!</p>
+            <a href="#" class="btn btn-primary">Go!</a>
+        </div>
+        </div>
+    </div>
+    </div>
+</div> 
+
+<div id="foo">
+  <footer class="footer">
+   <span style="float: left"> <h4>CopyRight - Govadiyo</h4></span>
+    <span style="float:right" > Share
+     <i class="fa fa-google-plus" aria-hidden="true"></i>
+     <i class="fa fa-facebook" aria-hidden="true"></i>
+     <i class="fa fa-twitter" aria-hidden="true"></i>
+    </span>
+  </footer>
+</div>
